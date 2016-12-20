@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+  <head>
+    <title><%- title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%- title %></h1>
+    <p>Welcome to <%- title %></p>
+
+    <a href="#!/urls/create">Create URL</a>
+
+    <section ng-view></section>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/urls/urls.client.module.js"></script>
+    <script type="text/javascript" src="/urls/controllers/urls.client.controller.js"></script>
+    <script type="text/javascript" src="/urls/service/urls.client.service.js"></script>
+    <script type="text/javascript" src="/urls/config/urls.client.routes.js"></script>
+    <!--<script type="text/javascript" src="/urls/config/urls.client.routes.js"></script>--->
+    <script type="text/javascript" src="/application.js"></script>
+  </body>
+
+</html>

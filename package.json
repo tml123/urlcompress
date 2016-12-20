@@ -1,0 +1,24 @@
+{
+  "name": "urlcompress",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "mongoose": "~4.7.2",
+    "method-override": "~2.0.0",
+    "compress": "0.99.0",
+    "js-base64": "~2.1.0",
+    "satelize": "~0.2.0",
+    "request": "latest",
+    "cheerio": "latest"
+  }
+}

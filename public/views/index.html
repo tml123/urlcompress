@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+    <title>Yay!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+</head>
+<body>
+<h1>Where you <small>@</small></h1>
+<div class="btn-group" role="group" aria-label="Click">
+    <a href="#!/urls/create" class="btn">Create URL</a>
+    <a href="#!/urls" class="btn">Current URLS</a>
+</div>
+<section ng-view></section>
+
+
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.3.0/ng-infinite-scroll.js"></script>
+<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-leaflet-directive/0.10.0/angular-leaflet-directive.min.js"></script>
+
+<script type="text/javascript" src="/urls/urls.client.module.js"></script>
+<script type="text/javascript" src="/urls/controllers/urls.client.controller.js"></script>
+<script type="text/javascript" src="/urls/controllers/map.client.controller.js"></script>
+<script type="text/javascript" src="/urls/service/urls.client.service.js"></script>
+<script type="text/javascript" src="/urls/config/urls.client.routes.js"></script>
+<!--<script type="text/javascript" src="/urls/config/urls.client.routes.js"></script>--->
+<script type="text/javascript" src="/application.js"></script>
+</body>
+
+</html>

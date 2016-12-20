@@ -1,0 +1,14 @@
+<section data-ng-controller="UrlsController" data-ng-init="find()">
+    <h3>Urls</h3>
+    <ul class="list-group">
+        <li class="list-group-item" data-ng-repeat="url in urls">
+            <a data-ng-href="#!/urls/{{url.shortUrl}}" data-ng-bind="url.url"></a>
+            <br>
+            <small data-ng-bind="url.created | date:'medium'"></small>
+            <small>/</small>
+        </li>
+    </ul>
+    <div data-ng-hide="!urls || urls.length">
+        No articles yet, why don't you <a href="/#!/articles/create">create one</a>?
+    </div>
+</section>

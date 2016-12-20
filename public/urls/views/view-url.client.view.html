@@ -1,0 +1,15 @@
+<section data-ng-controller="UrlsController" data-ng-init="findOne()">
+    <h3 data-ng-bind="url.url"></h3>
+    <a data-ng-href="/@{{url.shortUrl}}">Redirect</a>
+    <div>
+        <a href="#" data-ng-click="delete();">delete</a>
+    </div>
+    <small>
+        <em>Posted on</em>
+        <em data-ng-bind="url.created | date:'mediumDate'"></em>
+    </small>
+    <div ng-controller="MapController">
+        <!--leaflet directive must include height and width. See documentation on github-->
+        <leaflet height="480px" width="540px"></leaflet>
+    </div>
+</section>

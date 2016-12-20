@@ -1,0 +1,17 @@
+<section data-ng-controller="UrlsController">
+    <h3>Create New Url</h3>
+    <form data-ng-submit="create()" novalidate>
+        <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Shorten Your URL!</button>
+              </span>
+              <input type="text" class="form-control" data-ng-model="url" id="url" placeholder="Paste or Type URL" required>
+        </div>
+        <div data-ng-show="shortUrl">
+            <div>Shortened URL: @<strong data-ng-bind="shortUrl"></strong></div>
+        </div>
+        <div data-ng-show="error">
+            <strong data-ng-bind="error"></strong>
+        </div>
+    </form>
+</section>

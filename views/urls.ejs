@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URLS</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"/>
+</head>
+<body>
+    <h1>Welcome to URL Shortener DB <small>Where we shorten urls.</small></h1>
+
+        <p>Current URLs in the System</p>
+
+        <ul class="list-group">
+            <% urls.forEach(function(url) { %>
+            <li class="list-group-item">URL: <%= url.url %> || Shortened: <%= url.shortUrl %></li>
+            <% }); %>
+        </ul>
+</body>
+</html>
