@@ -1,3 +1,15 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URLCompress - Error</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+</head>
+<body>
+    <h1><%= message %><small><%= errorMsg%></small></h1>
+    <div>
+        <a href="/" class="btn btn-link">Navigate to our homepage.</a>
+    </div>
+</body>
+</head>
+</html>

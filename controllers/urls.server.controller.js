@@ -16,9 +16,31 @@ function encode(length, chars){
 exports.create = function(req, res, next) {
     // create url from request body
     var url = new Url(req.body);
+    var that = url;
+    if (url.shortUrl) {
+        Url.findOne({shortUrl: url.shortUrl})
+            .then(function (url) {
+                if (url) {
+                    res.json({shortUrl: "This short code has been taken. Try another."});
+                    return;
+                }
+                else {
+                    that.save(function(){
+                        res.json(url);
+                    });
+                }
+            });
+    }
+    // if no shortUrl
     // encode short url by taking base64 encoding
     // take random 10 characters from encoding
-    url.shortUrl = encode(10, Base64.encode(url.url));
+    else if (!url.shortUrl) {
+        url.shortUrl = encode(10, Base64.encode(url.url));
+        url.save(function(){
+            res.json(url);
+        });
+    }
+    /*
     url.save(function(err){
         if(err){
             return next(err);
@@ -26,6 +48,7 @@ exports.create = function(req, res, next) {
             res.json(url);
         }
     });
+    */
 }
 
 exports.list = function(req, res, next) {
@@ -63,7 +86,12 @@ exports.sendToUrl = function(req, res, next) {
             // redirect to long url
            res.redirect(url.url);
        } else {
-           res.json({title: "Oops"});
+            res.locals.message = "Oops. Try again.";
+            res.locals.errorMsg = "The shortened URL you tried doesn't exist."
+
+            // render the error page
+            res.status(404);
+            res.render('error');
        }
     });
 }

@@ -4,9 +4,17 @@
 angular.module('urls').controller('UrlsController', ['$scope', '$routeParams', '$location', 'Urls',
     function($scope, $routeParams, $location, Urls){
     $scope.create = function() {
-        var url = new Urls({
-            url: this.url,
-        });
+        data = {};
+        // if there is a shortUrl
+        if ($scope.shortUrl !== "") {
+            data = {
+                url: this.url,
+                shortUrl: this.shortUrl
+            }
+        }
+        // else no shortUrl, just url
+        else{data = {url: this.url}}
+        var url = new Urls(data);
         url.$save(function (response) {
             $scope.shortUrl = response.shortUrl;
         }, function (errorResponse) {
